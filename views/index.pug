@@ -1,0 +1,18 @@
+extends layout
+
+block content
+    h1(class="header") To do List
+    form(method="POST", action="todo/add")
+        input#myInput(type = "text",placeholder="add an item...", name="task")
+        br
+        button.btn.btn-primary(type="add" class="addBtn") add to list  
+    ul.checked
+    
+        each data2 in data 
+            li= data2 
+    
+                span.checked  &nbsp; 
+                    a(class="close" href="/todo/delete/"+index+"").fa.fa-trash-o.fa-lg
+                    
+                    
+    
